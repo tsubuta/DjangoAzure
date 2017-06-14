@@ -7,15 +7,15 @@ from django.conf.urls import url
 from app.forms import BootstrapAuthenticationForm
 from app.views import *
 from app.models import *
-from django.contrib.auth.views import *
+from django.conf.urls import include, url
 
-
-# Uncomment the next lines to enable the admin:
-from django.conf.urls import include,url
+# Uncomment the next two lines to enable the admin:
 from django.contrib import admin
-# admin.autodiscover()
-from django.conf.urls.static import static
 from django.conf import settings
+from django.conf.urls import include, url
+from django.conf import settings
+from django.conf.urls.static import static
+admin.autodiscover()
 
 urlpatterns = [
     # Examples:
