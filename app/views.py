@@ -6,10 +6,12 @@ from django.shortcuts import render
 from django.http import HttpRequest
 from django.template import RequestContext
 from datetime import datetime
+from .models import *
 
 def home(request):
     """Renders the home page."""
     assert isinstance(request, HttpRequest)
+    tes = test.objects.get(id=1)
     return render(
         request,
         'app/index.html',
@@ -17,6 +19,7 @@ def home(request):
         {
             'title':'Home Page',
             'year':datetime.now().year,
+            'test' : tes,
         })
     )
 
